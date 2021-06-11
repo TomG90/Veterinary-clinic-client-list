@@ -8,13 +8,15 @@
     <title>{{ $details->name}}</title>
 </head>
 <body>
-    <h1>{{ $details->name}}</h1>
-    <h3>(Owner: {{ $details->client->surname }})</h3>
-    <img class="doggo-pic" src="{{ $details['img']}}" alt="">
+        <div class="card">
+        <h1>{{ $details->name}}</h1>
+        <h3>(Owner: {{ $details->client->surname }})</h3>
+        <img class="doggo-pic" src="{{ $details['img']}}" alt="">
 
-    <h3>Symptoms</h3>
-    {{ $details['symptoms']}}
-    <h3>Medical History</h3>
-    {{ $details['medical_history']}}
+        <h3>Symptoms</h3>
+        {{ $details['symptoms']}}
+        <h3>Medical History</h3>
+        {{ $details['medical_history']}}
+    </div>
 </body>
 </html>
