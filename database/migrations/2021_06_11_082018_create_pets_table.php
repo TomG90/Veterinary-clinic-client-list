@@ -17,7 +17,7 @@ class CreatePetsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('symptoms');
-            $table->string('medical-history');
+            $table->string('medical_history');
             $table->string('species');
             $table->string('breed');
             $table->integer('age');
