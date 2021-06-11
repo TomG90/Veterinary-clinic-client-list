@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pets', 'PetsController@index');
+
+Route::get('/pets/{id}', 'PetsController@details');

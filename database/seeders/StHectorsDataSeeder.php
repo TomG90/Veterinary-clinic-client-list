@@ -41,9 +41,10 @@ class StHectorsDataSeeder extends Seeder
                 $newPet->weight = $da->weight ?? 0;
                 $newPet->species = $da->species ?? 'null';
                 $newPet->age = $da->age ?? 0 ;
-                $newPet->img = 'images/' . $da->photo ?? 'null';
+                $newPet->img = '/images/' . $da->photo ?? 'null';
                 $newPet->medical_history = $da->medical_history ?? 'null';
                 $newPet->symptoms = $da->symptoms ?? 'null';
+                $newPet->client_id = $newClient->id ?? 0;
                 $newPet->save();
             }
         }
