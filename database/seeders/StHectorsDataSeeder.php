@@ -16,7 +16,7 @@ class StHectorsDataSeeder extends Seeder
      */
     public function run()
     {
-        $json_string = file_get_contents('C:\web\exercises\pets\Veterinary-clinic-client-list\storage\clients\clients.json'); // replace path with a real path
+        $json_string = file_get_contents('/Users/petrkavulok/web/projects/hackaton3/Veterinary-clinic-client-list/storage/clients/clients.json'); // replace path with a real path
         $data = json_decode($json_string); // decode the string into data
         
         DB::table('clients')->truncate();
@@ -41,7 +41,7 @@ class StHectorsDataSeeder extends Seeder
                 $newPet->weight = $da->weight ?? 0;
                 $newPet->species = $da->species ?? 'null';
                 $newPet->age = $da->age ?? 0 ;
-                $newPet->img = $da->photo ?? 'null';
+                $newPet->img = 'images/pets/' . $da->photo ?? 'null';
                 $newPet->medical_history = $da->medical_history ?? 'null';
                 $newPet->symptoms = $da->symptoms ?? 'null';
                 $newPet->save();
