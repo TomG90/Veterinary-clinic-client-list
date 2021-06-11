@@ -1,0 +1,46 @@
+html {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(215, 215, 215);
+    background: linear-gradient(
+        180deg,
+        rgba(215, 215, 215, 1) 0%,
+        rgba(253, 187, 45, 0) 50%
+    );
+}
+
+h2 {
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+.cont {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    padding-left: 4em;
+}
+
+img {
+    width: 150px;
+}
+
+img:hover {
+    width: 200px;
+}
