@@ -11,8 +11,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <form action="{{ action('PetsController@index') }}" method="GET">
+
+
+        <label for="search"> Search: </label>
+        <input type="text" name="search" id="search">
+        <button>search</button>
+
+    </form>
+
 <ul>
-    @foreach($pets as $pet)
+   {{-- if the array $search is set, uses $search to loop through and create desired list, otherwise uses default $pets--}}
+    @foreach(isset($search) ? $search : $pets as $pet)
     <li>
 
         <div class="card">
@@ -21,7 +32,7 @@
             </div>
             <div class="info">
                 <h2>Good puppy <a href="{{ action('PetsController@index') }}/{{$pet->id}}">{{ $pet->name }}</a></h2>
-                <p> Owner: Mr./Ms. {{ $pet->client->surname }}</p>
+                <p> Owner: Mr./Ms. <a href="{{ action('ClientsController@details', [$pet->client->id]) }}">{{ $pet->client->surname }}</a></p>
             </div>
         </div>
     </li>

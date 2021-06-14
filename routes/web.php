@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/pets', 'PetsController@index');
 
 Route::get('/pets/{id}', 'PetsController@details');
+// Route::get('/search', 'PetsController@index');
+Route::get('client/{id}', 'ClientsController@details');

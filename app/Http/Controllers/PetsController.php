@@ -12,9 +12,13 @@ class PetsController extends Controller
     {
         $pets = Pet::orderBy('name')->with('client')->limit(10)->get();
 
-        
+        //really not 100% sure about this line, but it appears to subtract the value from input on line 19 in pets.blade.php
+        $query = \Request::get('search');
+        //creates new query
+        $search = Pet::orderBy('name', 'asc')->where('name', 'like', '%'.$query.'%')->limit(10)->get();
 
-        return view('pets/pets', compact('pets'));
+
+        return view('pets/pets', compact('pets', 'search'));
     }
 
     public function details($id)

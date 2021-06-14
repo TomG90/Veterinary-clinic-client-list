@@ -9,14 +9,16 @@
 </head>
 <body>
         <div class="card">
-        <h1>{{ $details->name}}</h1>
-        <h3>(Owner: {{ $details->client->surname }})</h3>
-        <img class="doggo-pic" src="{{ $details['img']}}" alt="">
+            <h1>{{ $details->name}}</h1>
+            <h3>(Owner: <a href=" {{ action('ClientsController@details', [$details->client->id])}} ">{{ $details->client->surname }} 
+            </a>)</h3>
+            <img class="doggo-pic" src="{{ $details['img']}}" alt="">
 
-        <h3>Symptoms</h3>
-        {{ $details['symptoms']}}
-        <h3>Medical History</h3>
-        {{ $details['medical_history']}}
-    </div>
+            <h3>Symptoms</h3>
+            {{ $details['symptoms']}}
+            <h3>Medical History</h3>
+            {{ $details['medical_history']}} <br>
+            <a href="{{ action('PetsController@index') }}"> <- Go Back </a>
+        </div>
 </body>
 </html>
